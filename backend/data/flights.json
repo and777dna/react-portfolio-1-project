@@ -1,0 +1,22 @@
+[
+  {
+    "id": "flight001",
+    "airline": "Emirates",
+    "flightNumber": "EK202",
+    "departureCityId": "city001",
+    "arrivalCityId": "city003",
+    "departureTime": "2025-03-15T10:00:00Z",
+    "arrivalTime": "2025-03-15T20:00:00Z",
+    "price": 750
+  },
+  {
+    "id": "flight002",
+    "airline": "British Airways",
+    "flightNumber": "BA215",
+    "departureCityId": "city002",
+    "arrivalCityId": "city001",
+    "departureTime": "2025-03-16T14:30:00Z",
+    "arrivalTime": "2025-03-16T22:00:00Z",
+    "price": 550
+  }
+]

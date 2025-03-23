@@ -1,0 +1,23 @@
+[
+  {
+    "id": "city001",
+    "name": "New York",
+    "country": "USA",
+    "iataCode": "JFK",
+    "airports": ["JFK", "LGA", "EWR"]
+  },
+  {
+    "id": "city002",
+    "name": "London",
+    "country": "UK",
+    "iataCode": "LHR",
+    "airports": ["LHR", "LGW", "STN"]
+  },
+  {
+    "id": "city003",
+    "name": "Dubai",
+    "country": "UAE",
+    "iataCode": "DXB",
+    "airports": ["DXB"]
+  }
+]

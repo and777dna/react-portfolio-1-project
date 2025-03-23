@@ -1,0 +1,147 @@
+[
+  {
+    "id": "service123",
+    "name": "Hotel Room",
+    "description": "Comfortable room for 2 people.",
+    "cityId": "city003",
+    "price": 1000,
+    "availability": 13,
+    "totalNumber": 15,
+    "createdAt": "2025-01-01T00:00:00Z",
+    "updatedAt": "2025-03-11T09:50:33.051Z",
+    "category": [
+      "City"
+    ]
+  },
+  {
+    "id": "service124",
+    "name": "Luxury Suite",
+    "description": "Spacious suite with a king-size bed, living area, and a beautiful view.",
+    "cityId": "city001",
+    "price": 2500,
+    "availability": 14,
+    "totalNumber": 15,
+    "createdAt": "2025-01-10T00:00:00Z",
+    "updatedAt": "2025-03-09T07:35:52.661Z",
+    "category": [
+      "City",
+      "Beach"
+    ]
+  },
+  {
+    "id": "service125",
+    "name": "Spa Package",
+    "description": "Relaxing spa treatment including massage, sauna, and facial.",
+    "cityId": "city003",
+    "price": 150,
+    "availability": 22,
+    "totalNumber": 25,
+    "createdAt": "2025-02-01T00:00:00Z",
+    "updatedAt": "2025-03-09T07:35:54.105Z",
+    "category": [
+      "City",
+      "Beach",
+      "Outdoors"
+    ]
+  },
+  {
+    "id": "service126",
+    "name": "Airport Transfer",
+    "description": "Private car service to and from the airport.",
+    "cityId": "city002",
+    "price": 50,
+    "availability": 55,
+    "totalNumber": 55,
+    "createdAt": "2025-01-05T00:00:00Z",
+    "updatedAt": "2025-03-08T14:16:26.223Z",
+    "category": [
+      "Outdoors"
+    ]
+  },
+  {
+    "id": "service127",
+    "name": "Conference Room Booking",
+    "description": "Fully equipped conference room with seating for 20 people.",
+    "cityId": "city001",
+    "price": 500,
+    "availability": 15,
+    "totalNumber": 15,
+    "createdAt": "2025-02-10T00:00:00Z",
+    "updatedAt": "2025-03-06T16:11:29.012Z",
+    "category": [
+      "Beach",
+      "Outdoors"
+    ]
+  },
+  {
+    "id": "service128",
+    "name": "Private Dining Experience",
+    "description": "A private chef will prepare a 5-course meal for your party.",
+    "cityId": "city003",
+    "price": 700,
+    "availability": 15,
+    "totalNumber": 15,
+    "createdAt": "2025-02-15T00:00:00Z",
+    "updatedAt": "2025-03-08T14:16:17.623Z",
+    "category": [
+      "City",
+      "Outdoors"
+    ]
+  },
+  {
+    "id": "service129",
+    "name": "Guided Tour",
+    "description": "Guided sightseeing tour of the city for up to 10 people.",
+    "cityId": "city001",
+    "price": 100,
+    "availability": 15,
+    "totalNumber": 15,
+    "createdAt": "2025-01-20T00:00:00Z",
+    "updatedAt": "2025-03-08T14:16:32.782Z",
+    "category": [
+      "Outdoors"
+    ]
+  },
+  {
+    "id": "service130",
+    "name": "Yoga Retreat",
+    "description": "Yoga and wellness retreat for 3 days with expert instructors.",
+    "cityId": "city002",
+    "price": 1200,
+    "availability": 15,
+    "totalNumber": 15,
+    "createdAt": "2025-02-01T00:00:00Z",
+    "updatedAt": "2025-03-08T14:16:31.440Z",
+    "category": [
+      "Outdoors"
+    ]
+  },
+  {
+    "id": "service131",
+    "name": "Wedding Package",
+    "description": "Full-service wedding package including venue, catering, and photography.",
+    "cityId": "city003",
+    "price": 5000,
+    "availability": 15,
+    "totalNumber": 15,
+    "createdAt": "2025-01-25T00:00:00Z",
+    "updatedAt": "2025-03-06T16:11:38.477Z",
+    "category": [
+      "Beach"
+    ]
+  },
+  {
+    "id": "service132",
+    "name": "Beach Cabana Rental",
+    "description": "Private beach cabana with sunbeds, towels, and refreshments.",
+    "cityId": "city003",
+    "price": 300,
+    "availability": 15,
+    "totalNumber": 15,
+    "createdAt": "2025-02-10T00:00:00Z",
+    "updatedAt": "2025-03-06T16:11:40.762Z",
+    "category": [
+      "Outdoors"
+    ]
+  }
+]
