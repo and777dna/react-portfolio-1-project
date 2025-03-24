@@ -1,16 +1,18 @@
 //import { useDispatch } from "react-redux";
-//import {setIsAdmin} from "../redux/user-slice";
+//import { setIsAdmin } from "../redux/user-slice";
 
 export async function fetchData(url, method = false, methodType, value) {
+    console.log("url, methodType, value, method:" , url, methodType, value, method);
     try {
         let response;
-        if (method) {
+        if ( method ) {
+            console.log("I am inside fetchData")
             await fetch(url, {
                 method: methodType,
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(value),
+                body: JSON.stringify({ changeduser: value }),
             })
         } else {
             response = await fetch(url);

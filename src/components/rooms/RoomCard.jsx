@@ -3,16 +3,26 @@ import { useEffect, useState } from "react";
 
 export default function RoomCard({ room, addReservation, deleteReservation, functionsExists = true, newForm = false, changeUserValues }) {
 
-    const user = room;
     const [userr, setUserr] = useState({
-        userName: user?.name,
-        userPassword: user?.password,
-        userRole: user?.role,
+        userName: room?.name,
+        userPassword: room?.password,
+        userRole: room?.role,
     })
 
     useEffect(() => {
-        console.log("userr.userName: ", userr)
+        console.log("Актуальные данные в состоянии userr:", userr)
     }, [userr]);
+
+    // Функция, которая вызывается при клике на кнопку
+    const handleChangeUser = () => {
+        const updatedUser = {
+            name: userr.userName,  // Используем актуальные данные из состояния
+            password: userr.userPassword,
+            role: userr.userRole,
+        };
+        console.log("Отправляемые данные в родительский компонент:", updatedUser);
+        changeUserValues(updatedUser);  // Вызываем функцию родительского компонента и передаем обновленные данные
+    };
 
     return <Card style={{ width: "100%" }}>
         <Space direction="vertical" size="small" style={{ width: "100%" }}>
@@ -56,15 +66,17 @@ export default function RoomCard({ room, addReservation, deleteReservation, func
                     <Button
                         type="primary"
                         size="small"
-                        onClick={() => {
+                        /*onClick={() => {
                             const updatedUser = {
-                                ...user,
-                                name: user.name,
-                                password: user.password,
-                                role: user.role,
+                                ...userr,
+                                name: userr.name,
+                                password: userr.password,
+                                role: userr.role,
                             }
+                            console.log("updatedUser:",updatedUser)
                             changeUserValues(updatedUser)
-                        }}
+                        }}*/
+                        onClick={handleChangeUser}
                     >
                         Change user
                     </Button>

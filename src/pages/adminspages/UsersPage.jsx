@@ -18,7 +18,7 @@ export default function UsersPage() {
 
     const mutation = useMutation({
         //mutationFn: (updatedUser) => fetchData(url="http://localhost:3000/changeuser",  method="true", methodType="POST", value=updatedUser) ,
-        mutationFn: (updatedUser) => fetchData("http://localhost:3000/changeuser",  true, "POST", updatedUser) ,
+        mutationFn: (updatedUser) => fetchData("http://localhost:3001/users/changeuser",  true, "POST", updatedUser) ,
         onSuccess: (data) => {
             console.log("User updated successfully:", data);
         },
@@ -29,6 +29,7 @@ export default function UsersPage() {
 
     function changeUserValues(updatedUser) {
         //useMutation() to the server with parameter user, which will be identified by key
+        console.log("Полученные обновленные данные in UsersPage:", updatedUser);
         mutation.mutate(updatedUser/*, {
             onSuccess: (data) => {//TODO: to return the result through fetchData() to user's state in Redux
                 console.log("User updated successfully:", data);
@@ -55,7 +56,9 @@ export default function UsersPage() {
                         <RoomCard
                             room={user}
                             functionsExists={false}
-                            changeUserValues={() => changeUserValues(user)}
+                            //changeUserValues={() => changeUserValues(user)}
+                            changeUserValues={changeUserValues}
+                            //changeUserValues={() => changeUserValues(user)}
                         />
                     </li>
                 ))}
