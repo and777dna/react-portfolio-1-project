@@ -1,28 +1,81 @@
 import { Button, Card, Input, Space } from "antd";
 import { useEffect, useState } from "react";
 
-export default function RoomCard({ room, addReservation, deleteReservation, functionsExists = true, newForm = false, changeUserValues }) {
+export default function RoomCard({ room, addReservation, deleteReservation, functionsExists = true, newForm = false, changeUserValues, createUser }) {
 
-    const [userr, setUserr] = useState({
+    /*const [userr, setUserr] = useState({
         userName: room?.name,
         userPassword: room?.password,
         userRole: room?.role,
     })
 
+    const [newUser, setNewUser] = useState({
+        name: "",
+        password: "",
+        role: ""
+    })*/
+
+    const [userState, setUserState] = useState({
+        userr: {
+            userName: room?.name,
+            userPassword: room?.password,
+            userRole: room?.role,
+        },
+        newUser: {
+            name: "",
+            password: "",
+            role: ""
+        }
+    })
+
     useEffect(() => {
-        console.log("Актуальные данные в состоянии userr:", userr)
-    }, [userr]);
+        console.log("Актуальные данные в состоянии userr:", userState.userr)
+    }, [userState]);
+
+    const updateUserr = (key, value) => {
+        setUserState(
+            (prevState) => ({
+                ...prevState,
+                userr: {
+                    ...prevState.userr,
+                    [key]: value
+                }
+            })
+        )
+    }
+
+    const updateNewUser = (key, value) => {
+        setUserState(
+            prevState => ({
+                    ...prevState,
+                    newUser: {
+                        ...prevState.newUser,
+                        [key]: value
+                    }
+            })
+        )
+    }
 
     // Функция, которая вызывается при клике на кнопку
     const handleChangeUser = () => {
         const updatedUser = {
+            name: userState.userr.userName,
+            password: userState.userr.userPassword,
+            role: userState.userr.userRole,
+        }
+        changeUserValues(updatedUser);
+        /*const updatedUser = {
             name: userr.userName,  // Используем актуальные данные из состояния
             password: userr.userPassword,
             role: userr.userRole,
         };
         console.log("Отправляемые данные в родительский компонент:", updatedUser);
-        changeUserValues(updatedUser);  // Вызываем функцию родительского компонента и передаем обновленные данные
+        changeUserValues(updatedUser);  // Вызываем функцию родительского компонента и передаем обновленные данные*/
     };
+
+    const createUserValues = () => {
+        createUser(userState.newUser)
+    }
 
     return <Card style={{ width: "100%" }}>
         <Space direction="vertical" size="small" style={{ width: "100%" }}>
@@ -31,17 +84,18 @@ export default function RoomCard({ room, addReservation, deleteReservation, func
 
                 <>
                     <div>
-                        <Input placeholder={""}/>
-                        <Input placeholder={""}/>
-                        <Input placeholder={""}/>
+                        <Input placeholder="Name" onChange={ e => updateNewUser("name", e.target.value) }/>
+                        <Input placeholder="Password" onChange={ e => updateNewUser("password", e.target.value) }/>
+                        <Input placeholder="Role" onChange={ e => updateNewUser("role", e.target.value) }/>
                     </div>
 
                     <Space>
                         <Button
                             type="primary"
                             size="small"
-                            onClick={() => addReservation(room.id, "addBooking")}
-
+                            //onClick={() => addReservation(room.id, "addBooking")}
+                            //TODO:function to create a user
+                            onClick={createUserValues}
                         >
                             Create new user
                         </Button>
@@ -53,9 +107,13 @@ export default function RoomCard({ room, addReservation, deleteReservation, func
             {
                 !newForm && !functionsExists &&
                 <div>
-                    <Input defaultValue={userr.userName} onChange={(e) => setUserr(prev => ({ ...prev, userName: e.target.value }))} />
-                    <Input defaultValue={userr.userPassword} onChange={(e) => setUserr(prev => ({ ...prev, userPassword: e.target.value }))} />
-                    <Input defaultValue={userr.userRole} onChange={(e) => setUserr(prev => ({ ...prev, userRole: e.target.value }))} />
+                    //TODO: maybe i should fix setUserState()
+                    <Input defaultValue={userState.userr.userName} onChange={(e) => updateUserr("userName", e.target.value)} />
+                    <Input defaultValue={userState.userr.userPassword} onChange={(e) => updateUserr("userPassword", e.target.value)} />
+                    <Input defaultValue={userState.userr.userRole} onChange={(e) => updateUserr("userRole", e.target.value)} />
+                    {/*<Input defaultValue={userState.userr.userName} onChange={(e) => setUserState(prev => ({ ...prev, userName: e.target.value }))} />
+                    <Input defaultValue={userState.userr.userPassword} onChange={(e) => setUserState(prev => ({ ...prev, userPassword: e.target.value }))} />
+                    <Input defaultValue={userState.userr.userRole} onChange={(e) => setUserState(prev => ({ ...prev, userRole: e.target.value }))} />*/}
                 </div>
             }
 

@@ -8,7 +8,6 @@ import { fetchData } from "../../utils/https";
 
 export default function UsersPage() {
     //TODO: buttons to add, delete a user
-    //TODO: form to change a user
 
     const users = useSelector(state => state.user.user) || [];
 
@@ -16,6 +15,8 @@ export default function UsersPage() {
         console.log("users:", users);
     }, [users]);
 
+
+    //TODO: to combine mutation with mutation2
     const mutation = useMutation({
         //mutationFn: (updatedUser) => fetchData(url="http://localhost:3000/changeuser",  method="true", methodType="POST", value=updatedUser) ,
         mutationFn: (updatedUser) => fetchData("http://localhost:3001/users/changeuser",  true, "POST", updatedUser) ,
@@ -27,6 +28,21 @@ export default function UsersPage() {
         }
     })
 
+    const mutation2 = useMutation({
+        mutationFn: ({ newUser, createUser }) => {
+            return createUser ? fetchData("http://localhost:3001/users/createuser", true, "POST", newUser) : null;
+        },
+        onSuccess: (data) => {
+            console.log("User created successfully:", data);
+        },
+        onError: (error) => {
+            console.error("Error updating user:", error);
+        }
+    })
+
+
+
+    //TODO: to create true/false parameter for changeUserValues to combine changeUserValues() with createUser()
     function changeUserValues(updatedUser) {
         //useMutation() to the server with parameter user, which will be identified by key
         console.log("Полученные обновленные данные in UsersPage:", updatedUser);
@@ -39,6 +55,13 @@ export default function UsersPage() {
             }
         }*/)
     }
+
+    function createUser(newUser) {
+        console.log("Полученные обновленные данные in newUser:", newUser);
+        mutation2.mutate({ newUser: newUser, createUser: true })
+    }
+
+
 
     return <>
         {/*<ul style={{ listStyleType: "none" }}>
@@ -66,7 +89,7 @@ export default function UsersPage() {
         </Card>
 
         <Card>
-            <RoomCard newForm={true} />
+            <RoomCard newForm={true} createUser={createUser}/>
         </Card>
 
         <AntdFormAuth auth="true" authTypeExists="false"/>

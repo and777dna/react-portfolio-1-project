@@ -1,6 +1,6 @@
 import express from "express";
 import { readJsonFile } from "../util/readJsonFile.js";
-import {writeJsonFile} from "../util/writeJsonFile.js";  // Импортируем функцию
+import { writeJsonFile } from "../util/writeJsonFile.js";
 
 const router = express.Router();
 
@@ -14,7 +14,6 @@ router.get("/", async (req, res) => {
     }
 });
 
-//TODO: to commit this for today
 router.post("/changeuser", async (req, res) => {
     try {
         const users = await readJsonFile("./data/users.json");
@@ -32,8 +31,9 @@ router.post("/changeuser", async (req, res) => {
             ...users[existingIndex],
             ...changeduser
         }
+        console.log("users: ", users);
 
-        //fs.writeFile()
+
         //await fs.writeFile("./data/users.json", JSON.stringify(users, null, 2));
         writeJsonFile("./data/users.json", users)
 
@@ -42,6 +42,32 @@ router.post("/changeuser", async (req, res) => {
 
     } catch (e) {
         res.status(500).json({ error: "Internal server error" });
+    }
+})
+
+router.post("/createuser", async (req, res) => {
+    try {
+        const users = await readJsonFile("./data/users.json");
+        const newuser = req.body.changeduser;
+        console.log("newuser: ", newuser);
+
+        //TODO: to find last index of this array
+        /*const  lastIndex = users.findLastIndex()
+        users[lastIndex + 1] = {
+            ...newuser
+        }*/
+        const lastIndex = users.length - 1;
+        users[lastIndex + 1] = {
+            ...newuser
+        }
+        console.log("users: ", users);
+
+        writeJsonFile("./data/users.json", users)
+
+        res.status(200).json(users);
+
+    } catch (e) {
+        res.status(500).json({ error: "Internal server error" })
     }
 })
 
