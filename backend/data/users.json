@@ -1,19 +1,16 @@
 [
   {
+    "id": "001",
     "name": "andrei",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6InNhcnRpbiIsImlhdCI6MTc0MjEzODQyNX0.h0hOeqqMxtoUZkaBE3lTQKKL9nvrG6a0DsSoM7Wmmr0",
     "password": "sartinuiui",
     "role": "registered_user"
   },
   {
+    "id": "002",
     "name": "kirill",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6ImtpcmlsbG92IiwiaWF0IjoxNzQyMTM3NjIwfQ.HGJeimj_B-nq7nBmyixC4nwdzVnqD0AX1RtucY3ovu0",
     "password": "kirillovvv",
     "role": "admin"
-  },
-  {
-    "name": "non",
-    "password": "knj",
-    "role": ""
   }
 ]

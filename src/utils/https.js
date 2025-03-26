@@ -5,7 +5,7 @@ export async function fetchData(url, method = false, methodType, value) {
     console.log("url, methodType, value, method:" , url, methodType, value, method);
     try {
         let response;
-        if ( method ) {
+        if ( method ) {//TODO: method to methodExist
             console.log("I am inside fetchData")
             await fetch(url, {
                 method: methodType,

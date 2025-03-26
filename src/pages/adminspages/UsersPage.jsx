@@ -7,7 +7,7 @@ import { useMutation } from "@tanstack/react-query";
 import { fetchData } from "../../utils/https";
 
 export default function UsersPage() {
-    //TODO: buttons to add, delete a user
+    //TODO: buttons to delete a user
 
     const users = useSelector(state => state.user.user) || [];
 
@@ -40,6 +40,19 @@ export default function UsersPage() {
         }
     })
 
+    const mutation3 = useMutation({
+        //should I write down user.id inside parameter to anonimous function?
+        mutationFn: (userId) => {
+            fetchData("http://localhost:3001/users/deleteuser", true, "DELETE", userId);
+        },
+        onSuccess: (data) => {
+            console.log("User created successfully:", data);
+        },
+        onError: (error) => {
+            console.error("Error updating user:", error);
+        }
+    })
+
 
 
     //TODO: to create true/false parameter for changeUserValues to combine changeUserValues() with createUser()
@@ -54,6 +67,10 @@ export default function UsersPage() {
                 console.error("Error updating user:", error);
             }
         }*/)
+    }
+
+    function deleteUserValues(userId) {
+        mutation3.mutate(userId)
     }
 
     function createUser(newUser) {
@@ -81,6 +98,7 @@ export default function UsersPage() {
                             functionsExists={false}
                             //changeUserValues={() => changeUserValues(user)}
                             changeUserValues={changeUserValues}
+                            deleteUserValues={deleteUserValues}
                             //changeUserValues={() => changeUserValues(user)}
                         />
                     </li>

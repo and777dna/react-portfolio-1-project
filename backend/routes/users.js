@@ -45,17 +45,13 @@ router.post("/changeuser", async (req, res) => {
     }
 })
 
+//TODO: PUT or POST?
 router.post("/createuser", async (req, res) => {
     try {
         const users = await readJsonFile("./data/users.json");
         const newuser = req.body.changeduser;
         console.log("newuser: ", newuser);
 
-        //TODO: to find last index of this array
-        /*const  lastIndex = users.findLastIndex()
-        users[lastIndex + 1] = {
-            ...newuser
-        }*/
         const lastIndex = users.length - 1;
         users[lastIndex + 1] = {
             ...newuser
@@ -66,6 +62,27 @@ router.post("/createuser", async (req, res) => {
 
         res.status(200).json(users);
 
+    } catch (e) {
+        res.status(500).json({ error: "Internal server error" })
+    }
+})
+
+router.delete("/deleteuser", async (req, res) => {
+    try {
+        const users = await readJsonFile("./data/users.json");
+        const userToDelete = req.body.changeduser;
+        const index = users.findIndex(user => user.name === userToDelete.userName);
+        console.log("userToDelete: ", userToDelete);
+        console.log("index: ", index);
+
+        //const updatedUsers = users.pop();
+        //const updatedUsers = users.splice(index, 1);
+        users.splice(index, 1);
+        console.log("updatedUsers: ", users);
+
+        writeJsonFile("./data/users.json", users);
+
+        res.status(200).json(users);
     } catch (e) {
         res.status(500).json({ error: "Internal server error" })
     }

@@ -1,19 +1,9 @@
 import { Button, Card, Input, Space } from "antd";
 import { useEffect, useState } from "react";
 
-export default function RoomCard({ room, addReservation, deleteReservation, functionsExists = true, newForm = false, changeUserValues, createUser }) {
+export default function RoomCard({ room, addReservation, deleteReservation, functionsExists = true, newForm = false, changeUserValues, deleteUserValues, createUser }) {
 
-    /*const [userr, setUserr] = useState({
-        userName: room?.name,
-        userPassword: room?.password,
-        userRole: room?.role,
-    })
-
-    const [newUser, setNewUser] = useState({
-        name: "",
-        password: "",
-        role: ""
-    })*/
+    const [isUserDeleted, setIsUserDeleted] = useState(false)
 
     const [userState, setUserState] = useState({
         userr: {
@@ -44,6 +34,12 @@ export default function RoomCard({ room, addReservation, deleteReservation, func
         )
     }
 
+    const deleteUser = (user) => {
+        console.log("deleteUser:", user)
+        setIsUserDeleted(true)
+        deleteUserValues(user)
+    }
+
     const updateNewUser = (key, value) => {
         setUserState(
             prevState => ({
@@ -55,6 +51,7 @@ export default function RoomCard({ room, addReservation, deleteReservation, func
             })
         )
     }
+
 
     // Функция, которая вызывается при клике на кнопку
     const handleChangeUser = () => {
@@ -77,102 +74,108 @@ export default function RoomCard({ room, addReservation, deleteReservation, func
         createUser(userState.newUser)
     }
 
-    return <Card style={{ width: "100%" }}>
-        <Space direction="vertical" size="small" style={{ width: "100%" }}>
-            {
-                newForm &&
+    return <>{
+        !isUserDeleted &&
+        <Card style={{ width: "100%" }}>
+            <Space direction="vertical" size="small" style={{ width: "100%" }}>
+                {
+                    newForm &&
 
-                <>
+                    <>
+                        <div>
+                            <Input placeholder="Name" onChange={ e => updateNewUser("name", e.target.value) }/>
+                            <Input placeholder="Password" onChange={ e => updateNewUser("password", e.target.value) }/>
+                            <Input placeholder="Role" onChange={ e => updateNewUser("role", e.target.value) }/>
+                        </div>
+
+                        <Space>
+                            <Button
+                                type="primary"
+                                size="small"
+                                //onClick={() => addReservation(room.id, "addBooking")}
+                                //TODO:function to create a user
+                                onClick={createUserValues}
+                            >
+                                Create new user
+                            </Button>
+                        </Space>
+                    </>
+                }
+
+
+                {
+                    !newForm && !functionsExists &&
                     <div>
-                        <Input placeholder="Name" onChange={ e => updateNewUser("name", e.target.value) }/>
-                        <Input placeholder="Password" onChange={ e => updateNewUser("password", e.target.value) }/>
-                        <Input placeholder="Role" onChange={ e => updateNewUser("role", e.target.value) }/>
+                        <Input defaultValue={userState.userr.userName} onChange={(e) => updateUserr("userName", e.target.value)} />
+                        <Input defaultValue={userState.userr.userPassword} onChange={(e) => updateUserr("userPassword", e.target.value)} />
+                        <Input defaultValue={userState.userr.userRole} onChange={(e) => updateUserr("userRole", e.target.value)} />
                     </div>
+                }
 
+                {
+                    !newForm && !functionsExists
+                    &&
                     <Space>
                         <Button
                             type="primary"
                             size="small"
-                            //onClick={() => addReservation(room.id, "addBooking")}
-                            //TODO:function to create a user
-                            onClick={createUserValues}
+                            /*onClick={() => {
+                                const updatedUser = {
+                                    ...userr,
+                                    name: userr.name,
+                                    password: userr.password,
+                                    role: userr.role,
+                                }
+                                console.log("updatedUser:",updatedUser)
+                                changeUserValues(updatedUser)
+                            }}*/
+                            onClick={handleChangeUser}
                         >
-                            Create new user
+                            Change user
+                        </Button>
+
+                        <Button
+                            onClick={() => deleteUser(userState.userr)}
+                        >
+                            Delete user
                         </Button>
                     </Space>
-                </>
-            }
+                }
 
-
-            {
-                !newForm && !functionsExists &&
-                <div>
-                    //TODO: maybe i should fix setUserState()
-                    <Input defaultValue={userState.userr.userName} onChange={(e) => updateUserr("userName", e.target.value)} />
-                    <Input defaultValue={userState.userr.userPassword} onChange={(e) => updateUserr("userPassword", e.target.value)} />
-                    <Input defaultValue={userState.userr.userRole} onChange={(e) => updateUserr("userRole", e.target.value)} />
-                    {/*<Input defaultValue={userState.userr.userName} onChange={(e) => setUserState(prev => ({ ...prev, userName: e.target.value }))} />
-                    <Input defaultValue={userState.userr.userPassword} onChange={(e) => setUserState(prev => ({ ...prev, userPassword: e.target.value }))} />
-                    <Input defaultValue={userState.userr.userRole} onChange={(e) => setUserState(prev => ({ ...prev, userRole: e.target.value }))} />*/}
-                </div>
-            }
-
-            {
-                !newForm && !functionsExists
-                &&
-                <Space>
-                    <Button
-                        type="primary"
-                        size="small"
-                        /*onClick={() => {
-                            const updatedUser = {
-                                ...userr,
-                                name: userr.name,
-                                password: userr.password,
-                                role: userr.role,
-                            }
-                            console.log("updatedUser:",updatedUser)
-                            changeUserValues(updatedUser)
-                        }}*/
-                        onClick={handleChangeUser}
-                    >
-                        Change user
-                    </Button>
-                </Space>
-            }
-
-            {
-                !newForm && functionsExists
+                {
+                    !newForm && functionsExists
                     &&
-                <div>
-                    <h2>{room.name}</h2>
-                    <h3>{room.description}</h3>
-                    <h3>Price: ${room.price}</h3>
-                    <h3>availability - {room.availability}/{room.totalNumber}</h3>
-                </div>
-            }
+                    <div>
+                        <h2>{room.name}</h2>
+                        <h3>{room.description}</h3>
+                        <h3>Price: ${room.price}</h3>
+                        <h3>availability - {room.availability}/{room.totalNumber}</h3>
+                    </div>
+                }
 
-            {
-                !newForm && functionsExists
+                {
+                    !newForm && functionsExists
                     &&
-                <Space>
-                    <Button
-                        type="primary"
-                        size="small"
-                        onClick={() => addReservation(room.id, "addBooking")}
-                    >
-                        Add reservation
-                    </Button>
-                    <Button
-                        type="primary"
-                        size="small"
-                        onClick={() => deleteReservation(room.id, "deleteBooking")}
-                    >
-                        Delete reservation
-                    </Button>
-                </Space>
-            }
+                    <Space>
+                        <Button
+                            type="primary"
+                            size="small"
+                            onClick={() => addReservation(room.id, "addBooking")}
+                        >
+                            Add reservation
+                        </Button>
+                        <Button
+                            type="primary"
+                            size="small"
+                            onClick={() => deleteReservation(room.id, "deleteBooking")}
+                        >
+                            Delete reservation
+                        </Button>
+                    </Space>
+                }
 
-        </Space>
-    </Card>
+            </Space>
+        </Card>
+    }
+        </>
 }
