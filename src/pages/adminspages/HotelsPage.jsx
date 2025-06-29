@@ -9,6 +9,6 @@ export default function HotelsPage() {
 
 
     return <>
-
+        <h2>hotels</h2>
     </>
 }

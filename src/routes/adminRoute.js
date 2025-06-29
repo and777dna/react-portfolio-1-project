@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
-import HomePage from "./pages/adminspages/HomePage";
-import UsersPage from "./pages/adminspages/UsersPage";
-import HotelsPage from "./pages/adminspages/HotelsPage";
+import HomePage from "../pages/adminspages/HomePage";
+import UsersPage from "../pages/adminspages/UsersPage";
+import HotelsPage from "../pages/adminspages/HotelsPage";
 
 const adminRouter = createBrowserRouter([
     {

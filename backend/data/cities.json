@@ -19,5 +19,19 @@
     "country": "UAE",
     "iataCode": "DXB",
     "airports": ["DXB"]
+  },
+  {
+    "id": "city004",
+    "name": "Moscow",
+    "country": "RU",
+    "iataCode": "LHR",
+    "airports": ["LHR", "LGW", "STN"]
+  },
+  {
+    "id": "city005",
+    "name": "Minsk",
+    "country": "BL",
+    "iataCode": "DXB",
+    "airports": ["DXB"]
   }
 ]

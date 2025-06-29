@@ -1,18 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
-import { getAuthToken } from "./utils/auth";
-import RootLayout from "./pages/Root";
-import Firstpage from "./pages/Firstpage";
-import RoomsPage from "./pages/RoomsPage";
-import Cart from "./pages/Cart";
-import { action as logoutAction } from "./pages/Logout";
-import AuthPage, { action as authAction } from "./pages/AuthPage";
-import ErrorPage from "./pages/ErrorPage";
+import RootLayout from "../pages/Root";
+import Firstpage from "../pages/Firstpage";
+import RoomsPage from "../pages/RoomsPage";
+import Cart from "../pages/Cart";
+import { action as logoutAction } from "../pages/Logout";
+import AuthPage, { action as authAction } from "../pages/AuthPage";
+import ErrorPage from "../pages/ErrorPage";
 
-const userRouter = createBrowserRouter([
+
+export const userRouter = createBrowserRouter([
     {
         path: "/",
         id: "root",
-        loader: getAuthToken,
+        //loader: getAuthToken,//TODO: this stopped working
         element: <RootLayout />,
         children: [
             /*{
@@ -57,4 +57,4 @@ const userRouter = createBrowserRouter([
     }
 ]);
 
-export default userRouter;
+//export default userRouter;

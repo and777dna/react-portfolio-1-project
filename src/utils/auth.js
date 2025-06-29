@@ -4,5 +4,6 @@ export default function somethingWithAuth(token){
 
 export function getAuthToken() {
     //somethingWithAuth();//but i should take this funcctoin
+    console.log("I am inside getAuthToken()");
     return localStorage.getItem("token");
 }

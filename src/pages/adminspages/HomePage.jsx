@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { CustomButton1 } from "../../components/buttons/CustomButton1";
+import CustomButton1 from "../../components/buttons/CustomButton1";
 import { Space  } from "antd";
 
 export default function HomePage() {

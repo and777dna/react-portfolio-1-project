@@ -8,6 +8,8 @@ import * as http from "node:http";
 import usersRoutes from './routes/users.js';
 import authRoutes from './routes/authentication.js';
 import servicesRoutes from './routes/services.js';
+import holidaysRoutes from './routes/holidays.js';
+
 
 import { setupSocket } from './util/socket.js';
 /*import { readJsonFile } from "./util/readJsonFile.js"; // Подключаем функцию
@@ -70,5 +72,6 @@ app.use((req, res, next) => {
 app.use("/authenticationpage", authRoutes);
 app.use("/users", usersRoutes);  // Теперь все запросы "/users" обрабатываются в usersRoutes
 app.use("/services", servicesRoutes);
+app.use("/holidays", holidaysRoutes)
 
 server.listen(PORT, () => console.log(`🚀 Сервер запущен на порту ${PORT}`));

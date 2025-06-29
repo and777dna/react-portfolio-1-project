@@ -4,6 +4,9 @@ const availabilitySlice = createSlice({
     name: "availability",
     initialState: {
         rooms: [],
+        sortedRooms: [],
+        sortedRoomsByTypeAndCountry: [],
+        sortedType: [],
         payments: [],
         changed: false,
         notification: null,
@@ -11,6 +14,25 @@ const availabilitySlice = createSlice({
         error: null,
     },
     reducers: {
+        setSortedRooms: (state, action) => {
+            state.sortedRooms = action.payload;
+        },
+        setSortedByPropertyTypeAndCountry: (state, action) => {
+            console.log("action.payload.country, action.payload.type:",action.payload.country, action.payload.type)
+            console.log("0.state.sortedRooms:", state.sortedRooms)
+            //state.sortedRoomsByTypeAndCountry = state.sortedRooms
+            const filteredRooms = state.sortedRooms
+                .filter(room => room.country === action.payload.country)
+                .filter(room => room.type === action.payload.type)
+                //.filter(room => room.type === "Hotels")
+            state.sortedRoomsByTypeAndCountry = filteredRooms;
+            console.log("1.state.sortedRooms filteredRooms:", filteredRooms)
+            console.log("1.state.sortedRooms:", state.sortedRoomsByTypeAndCountry)
+        },
+        setSortedType: (state, action) => {
+            console.log("action.payload:",action.payload)
+            state.sortedType = action.payload;
+        },
         setAvailability: (state, action) => {
             state.availability = action.payload;
         },
@@ -56,5 +78,5 @@ export const fetchBookingData = (bookings) => {
 }
 
 
-export const { setAvailability, updateAvailability, clearAvailability, setError, setLoading } = availabilitySlice.actions;
+export const { setAvailability, updateAvailability, clearAvailability, setError, setLoading, setSortedRooms, setSortedByPropertyTypeAndCountry, setSortedType } = availabilitySlice.actions;
 export default availabilitySlice;

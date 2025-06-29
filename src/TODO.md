@@ -11,3 +11,5 @@
 ### const totalNumberOfRooms = services[serviceIndex].totalNumber;//which logic should be here?
 
 ##const users = useSelector(state => state.user) || []; // || is logical and???
+
+#⚠️ Если userRouter экспортирован как default, он не может быть именованным (export default и export const нельзя смешивать при импорте).

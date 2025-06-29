@@ -1,0 +1,27 @@
+[
+  {
+    "country": "russia",
+    "city": "moscow",
+    "hollidayName": "Victory`s day"
+  },
+  {
+    "country": "usa",
+    "city": "texas",
+    "hollidayName": "cowboy`s day"
+  },
+  {
+    "country": "china",
+    "city": "pekin",
+    "hollidayName": "rice`s day"
+  },
+  {
+    "country": "vietnam",
+    "city": "ghogho",
+    "hollidayName": "victory`s day"
+  },
+  {
+    "country": "brazil",
+    "city": "brazilia",
+    "hollidayName": "footvbal`s day"
+  }
+]

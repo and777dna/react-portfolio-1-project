@@ -2,15 +2,79 @@
   {
     "id": "001",
     "name": "andrei",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6InNhcnRpbiIsImlhdCI6MTc0MjEzODQyNX0.h0hOeqqMxtoUZkaBE3lTQKKL9nvrG6a0DsSoM7Wmmr0",
-    "password": "sartinuiui",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6InNhcnRpbiIsImlhdCI6MTc0ODc3MTM0OX0.cnsb9u92xWFPxh5uJkD1zbUQoAoF84rlGMuCeisyvFc",
+    "password": "sartin",
     "role": "registered_user"
   },
   {
     "id": "002",
     "name": "kirill",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6ImtpcmlsbG92IiwiaWF0IjoxNzQyMTM3NjIwfQ.HGJeimj_B-nq7nBmyixC4nwdzVnqD0AX1RtucY3ovu0",
-    "password": "kirillovvv",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6ImtpcmlsbG92IiwiaWF0IjoxNzQ1MjI2NTMyfQ.IQvnfsdRMvOBQWxJqlFikxBzOdCNc8W5WeYFuqFEFBg",
+    "password": "kirillov",
     "role": "admin"
+  },
+  {
+    "name": "Oleg",
+    "password": "ivanov",
+    "role": "users"
+  },
+  {
+    "name": "Ivan",
+    "password": "boronenko",
+    "role": "users"
+  },
+  {
+    "name": "try",
+    "password": "new",
+    "role": "houseKeeper",
+    "properties": [
+      {
+        "service123": [
+          {
+            "sales": [
+              {
+                "1sale": {
+                  "startDate": "2025-01-01T00:00:00Z",
+                  "endDate": "2025-01-02T00:00:00Z",
+                  "amountIn%": "10"
+                }
+              },
+              {
+                "2sale": {
+                  "startDate": "2025-01-03T00:00:00Z",
+                  "endDate": "2025-01-04T00:00:00Z",
+                  "amountIn%": "10"
+                }
+              },
+              {
+                "3sale": {
+                  "startDate": "2025-01-05T00:00:00Z",
+                  "endDate": "2025-01-06T00:00:00Z",
+                  "amountIn%": "10"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "service124": [
+          {}
+        ]
+      },
+      {
+        "service125": [
+          {
+            "sales": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": ":rb:",
+    "name": "trying",
+    "password": "withUseId",
+    "role": "user"
   }
 ]

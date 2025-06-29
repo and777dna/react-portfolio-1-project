@@ -11,3 +11,80 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom-slider {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  border: 1px solid #3d2f2f;
+}
+
+.custom-slider-scroll {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  overflow: scroll;
+  height: 150px;
+  /*overflow-x: hidden;*/
+}
+
+.custom-slider-scroll-button {
+  width: 150px;
+  margin: 10px 40px 10px;
+}
+
+.custom-search {
+  display: flex;
+  justify-content: center;
+}
+
+.calendar-panel {
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* styles.css */
+.ant-picker-cell-today .ant-picker-cell-inner {
+  background-color: transparent !important; /* Убираем фон */
+  color: #1890ff !important; /* Синий цвет для числа */
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+
+.ant-picker-cell-today .ant-picker-cell-inner::before {
+  display: none !important; /* Убираем рамку */
+}
+
+.highlighted-date {
+  background-color: #1890ff;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  margin: auto;
+}
+
+
+/*.ant-picker-cell-selected .ant-picker-cell-inner{
+  background-color: transparent !important; !* Убираем фон *!
+  color: #1890ff !important; !* Синий цвет для числа *!
+  font-weight: bold;
+  border-radius: 50%;
+}
+.ant-picker-cell-selected .ant-picker-cell-inner::before {
+  display: none !important;
+}*/
+
+/*
+.ant-picker-calendar-date-value {
+  color: aquamarine;
+}*/

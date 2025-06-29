@@ -1,55 +1,64 @@
-//import { useDispatch } from "react-redux";
-//import { setIsAdmin } from "../redux/user-slice";
-
 export async function fetchData(url, method = false, methodType, value) {
-    console.log("url, methodType, value, method:" , url, methodType, value, method);
+    //console.log("url, methodType, value, method:" , url, methodType, value, method);
     try {
         let response;
         if ( method ) {//TODO: method to methodExist
-            console.log("I am inside fetchData")
-            await fetch(url, {
+            //console.log("I am inside fetchData")
+            console.log("urlll:",url);
+            response = await fetch(url, {
                 method: methodType,
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ changeduser: value }),
+
+                body: JSON.stringify({ changeduser: value }),//TODO: to change "changeduser" to other key
             })
         } else {
             response = await fetch(url);
         }
 
         const data = await response.json();
+        console.log("url, dataaa:",url, data);
         return data;
     } catch (e) {
         console.log(e, "error fetching data");
     }
 }
 
-export let isAdmin = false;
 
 
-export async function authData({ url, values }){
-    //const dispatch = useDispatch()
-    try {//URL === (http://localhost:3000/authpage?mode=Authenticate || http://localhost:3000/authpage?mode=Authorise)
-        const response = await fetch( url , {
-        //const response = await fetch( url , {
+//TODO: to understand when should i use {request} or request
+export async function authData( request ) {
+    //const formData = await request.formData();
+    console.log("0.export async function authData({ request })");
+    const formData = await request.values;
+    const url = await request.url;
+    console.log("1.export async function authData({ request })");
+    console.log("formData:", formData);
+    //const values = Object.fromEntries(formData);
+    const values = formData;
+    console.log("values:", values);
+
+
+
+    try {//authenticationpage
+        //const response = await fetch("/login", {
+        const response = await fetch(url, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({name: values.username, password: values.password, mode: values.url}),
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name: values.username, password: values.password })
         });
+
         const data = await response.json();
+        //dispatch(setIsAdmin(data.role)); // Обновляем Redux //TODO: to give this to App.js in some way
 
-        const isAdmin = data.role === "admin";
-        //dispatch(setIsAdmin(isAdmin));
+        console.log("Updated isAdmin:", data.role);
+        //TODO: to return in some way data||data.role(may be through component where i use it like action it to creaate context)
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("adminRole", data.role);
 
-        console.log(data);
-        console.log(data.token)
-        const token = data.token;
-        localStorage.setItem("token", token);
         return data;
     } catch (e) {
-        console.log(e, "error fetching data");
+        console.error("Auth error:", e);
     }
 }

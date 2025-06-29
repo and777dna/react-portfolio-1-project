@@ -45,6 +45,8 @@ router.post("/", async (req, res) => {
             try {
                 if (comparePasswords(password, extractedPassword)) {
                     token = authentication(password);
+                    //const role = users[userIndex].role;
+                    //console.log("const role = users[userIndex].role;", role);
                     return res.status(200).json({ token })
                 }
             } catch (e) {
@@ -79,5 +81,7 @@ router.post("/", async (req, res) => {
         res.status(500).json({ error: "mistake for creating auth", details: e.message });
     }
 });
+
+
 
 export default router;

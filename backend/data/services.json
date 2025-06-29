@@ -1,147 +1,565 @@
 [
   {
+    "relativeLocation": "domesticcities",
     "id": "service123",
+    "uniqueProperty": true,
+    "totalRating": 9.7,
+    "houseKeeper": false,
     "name": "Hotel Room",
     "description": "Comfortable room for 2 people.",
-    "cityId": "city003",
+    "cityId": "Moscow",
+    "country": "RU",
+    "ratings": [
+      { "user_id": "001", "rating": 5 },
+      { "user_id": "002", "rating": 4 }
+    ],
     "price": 1000,
-    "availability": 13,
-    "totalNumber": 15,
+    "totalNumber": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
+    "availability": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
+    "dateAvailability": [
+      { "date": "2025-06-05", "for1": 4, "for2": 13, "for3": 15, "for4": 22, "for5": 17 },
+      { "date": "2025-06-06", "for1": 3, "for2": 10, "for3": 12, "for4": 20, "for5": 16 },
+      { "date": "2025-07-07", "for1": 5, "for2": 13, "for3": 17, "for4": 23, "for5": 17 }
+    ],
     "createdAt": "2025-01-01T00:00:00Z",
     "updatedAt": "2025-03-11T09:50:33.051Z",
     "category": [
       "City"
+    ],
+    "type": "Hotels",
+    "sales": [
+      {
+        "1sale": {
+          "startDate": "2025-01-01T00:00:00Z",
+          "endDate": "2025-01-02T00:00:00Z",
+          "amountIn%": "10"
+        }
+      },
+      {
+        "2sale": {
+          "startDate": "2025-01-03T00:00:00Z",
+          "endDate": "2025-01-04T00:00:00Z",
+          "amountIn%": "10"
+        }
+      },
+      {
+        "3sale": {
+          "startDate": "2025-01-05T00:00:00Z",
+          "endDate": "2025-01-06T00:00:00Z",
+          "amountIn%": "10"
+        }
+      }
     ]
   },
   {
+
+    "relativeLocation": "domesticcities",
+    "id": "landgut-poessnitzberg",
+    "name": "Landgut am Pößnitzberg",
+    "description": "Hotel located in the South Styrian Wine Country. Surrounded by vineyards, with outdoor pool, spa, and wine tastings.",
+    "longDescription": "Landgut am Pößnitzberg is located amidst the gently rolling hills of the South Styrian Wine Country, only a few kilometres away from the Slovenian border.\n\nHere you will find a quiet, natural ambiance for relaxation and regeneration, away from the major roads.\n\nThe motif of wine is reflected in the entire hotel, from the vines next to the beds to the views of the surrounding vineyards.\n\nFacilities at Landgut am Pößnitzberg include a heated outdoor pool, a spa area with sauna, steam and relaxation room, and a beauty studio offering treatments with natural essences from grapes.\n\nEnjoy dinner and wine accompaniment at our Restaurant Kreuzwirt. For hotel guests a free wine tasting is included, it takes place nearly every day at 5 pm.\n\nThe hotel also features three seminar rooms, one is located in the new built seminar house.",
+    "location": {
+      "address": "Pössnitz 168, 8463 Leutschach, Austria",
+      "city": "Leutschach",
+      "district": "Leutschach 4",
+      "country": "Austria",
+      "coordinates": {
+        "lat": 46.6906,
+        "lng": 15.5307
+      }
+    },
+    "rating": 9.1,
+    "uniqueProperty": true,
+    "totalRating": 9.7,
+    "houseKeeper": false,
+    "cityId": "Moscow",
+    "country": "RU",
+    "ratings": [
+      { "user_id": "001", "rating": 5 },
+      { "user_id": "002", "rating": 4 }
+    ],
+    "price": 1000,
+    "totalNumber": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
+    "availability": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
+    "dateAvailability": [
+      { "date": "2025-06-05", "for1": 4, "for2": 13, "for3": 15, "for4": 22, "for5": 17 },
+      { "date": "2025-06-06", "for1": 3, "for2": 10, "for3": 12, "for4": 20, "for5": 16 },
+      { "date": "2025-07-07", "for1": 5, "for2": 13, "for3": 17, "for4": 23, "for5": 17 }
+    ],
+    "createdAt": "2025-01-01T00:00:00Z",
+    "updatedAt": "2025-03-11T09:50:33.051Z",
+    "category": [
+      "City"
+    ],
+    "type": "Hotels",
+    "sales": [
+      {
+        "1sale": {
+          "startDate": "2025-01-01T00:00:00Z",
+          "endDate": "2025-01-02T00:00:00Z",
+          "amountIn%": "10"
+        }
+      },
+      {
+        "2sale": {
+          "startDate": "2025-01-03T00:00:00Z",
+          "endDate": "2025-01-04T00:00:00Z",
+          "amountIn%": "10"
+        }
+      },
+      {
+        "3sale": {
+          "startDate": "2025-01-05T00:00:00Z",
+          "endDate": "2025-01-06T00:00:00Z",
+          "amountIn%": "10"
+        }
+      }
+    ],
+    "amenities": [
+      "Superb breakfast",
+      "Indoor swimming pool",
+      "Free on-site parking",
+      "Spa and wellness centre",
+      "3 restaurants",
+      "Pets allowed",
+      "Free WiFi",
+      "Private bathroom",
+      "Airport shuttle",
+      "Non-smoking rooms"
+    ]
+  },
+  {
+    "relativeLocation": "internationalcities",
+    "id": "service123789",
+    "uniqueProperty": true,
+    "totalRating": 8.6,
+    "houseKeeper": false,
+    "name": "Hotel Room",
+    "description": "Comfortable room for 2 people.",
+    "cityId": "Moscow",
+    "country": "RU",
+    "ratings": [
+      { "user_id": "001", "rating": 5 },
+      { "user_id": "002", "rating": 4 }
+    ],
+    "price": 1000,
+    "totalNumber": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
+    "availability": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
+    "createdAt": "2025-01-01T00:00:00Z",
+    "updatedAt": "2025-03-11T09:50:33.051Z",
+    "category": [
+      "City"
+    ],
+    "type": "Hotels",
+    "sales": [
+      {
+        "1sale": {
+          "startDate": "2025-01-01T00:00:00Z",
+          "endDate": "2025-01-02T00:00:00Z",
+          "amountIn%": "10"
+        }
+      },
+      {
+        "2sale": {
+          "startDate": "2025-01-03T00:00:00Z",
+          "endDate": "2025-01-04T00:00:00Z",
+          "amountIn%": "10"
+        }
+      }
+    ]
+  },
+  {
+    "relativeLocation": "regions",
     "id": "service124",
+    "uniqueProperty": false,
+    "totalRating": 6.7,
+    "houseKeeper": true,
     "name": "Luxury Suite",
     "description": "Spacious suite with a king-size bed, living area, and a beautiful view.",
-    "cityId": "city001",
+    "cityId": "Moscow",
+    "country": "CZ",
+    "ratings": [],
     "price": 2500,
-    "availability": 14,
-    "totalNumber": 15,
+    "totalNumber": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
+    "availability": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
     "createdAt": "2025-01-10T00:00:00Z",
     "updatedAt": "2025-03-09T07:35:52.661Z",
     "category": [
       "City",
       "Beach"
-    ]
+    ],
+    "type": "Apartments"
   },
   {
+    "relativeLocation": "countries",
     "id": "service125",
+    "uniqueProperty": true,
+    "totalRating": 9.7,
+    "houseKeeper": false,
     "name": "Spa Package",
     "description": "Relaxing spa treatment including massage, sauna, and facial.",
     "cityId": "city003",
+    "country": "KZ",
+    "ratings": [],
     "price": 150,
-    "availability": 22,
-    "totalNumber": 25,
+    "totalNumber": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
+    "availability": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
     "createdAt": "2025-02-01T00:00:00Z",
     "updatedAt": "2025-03-09T07:35:54.105Z",
     "category": [
       "City",
       "Beach",
       "Outdoors"
-    ]
+    ],
+    "type": "Resorts"
   },
   {
+    "relativeLocation": "internationalcities",
     "id": "service126",
+    "uniqueProperty": true,
+    "totalRating": 7.1,
+    "houseKeeper": false,
     "name": "Airport Transfer",
     "description": "Private car service to and from the airport.",
     "cityId": "city002",
+    "country": "BY",
+    "ratings": [],
     "price": 50,
-    "availability": 55,
-    "totalNumber": 55,
+    "totalNumber": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
+    "availability": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
     "createdAt": "2025-01-05T00:00:00Z",
     "updatedAt": "2025-03-08T14:16:26.223Z",
     "category": [
       "Outdoors"
+    ],
+    "type": "Villas",
+    "sales": [
+      {
+        "1sale": {
+          "startDate": "2025-01-01T00:00:00Z",
+          "endDate": "2025-01-02T00:00:00Z",
+          "amountIn%": "10"
+        }
+      },
+      {
+        "2sale": {
+          "startDate": "2025-01-03T00:00:00Z",
+          "endDate": "2025-01-04T00:00:00Z",
+          "amountIn%": "10"
+        }
+      },
+      {
+        "3sale": {
+          "startDate": "2025-01-05T00:00:00Z",
+          "endDate": "2025-01-06T00:00:00Z",
+          "amountIn%": "10"
+        }
+      }
     ]
   },
   {
+    "relativeLocation": "internationalcities",
     "id": "service127",
+    "uniqueProperty": false,
+    "totalRating": 1.7,
+    "houseKeeper": true,
     "name": "Conference Room Booking",
     "description": "Fully equipped conference room with seating for 20 people.",
     "cityId": "city001",
+    "country": "RU",
+    "ratings": [],
     "price": 500,
-    "availability": 15,
-    "totalNumber": 15,
+    "totalNumber": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
+    "availability": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
     "createdAt": "2025-02-10T00:00:00Z",
     "updatedAt": "2025-03-06T16:11:29.012Z",
     "category": [
       "Beach",
       "Outdoors"
-    ]
+    ],
+    "type": "Cabins"
   },
   {
+    "relativeLocation": "domesticcities",
     "id": "service128",
+    "uniqueProperty": true,
+    "totalRating": 2.5,
+    "houseKeeper": true,
     "name": "Private Dining Experience",
     "description": "A private chef will prepare a 5-course meal for your party.",
     "cityId": "city003",
+    "country": "BY",
+    "ratings": [],
     "price": 700,
-    "availability": 15,
-    "totalNumber": 15,
+    "totalNumber": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
+    "availability": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
     "createdAt": "2025-02-15T00:00:00Z",
     "updatedAt": "2025-03-08T14:16:17.623Z",
     "category": [
       "City",
       "Outdoors"
-    ]
+    ],
+    "type": "Cottages"
   },
   {
+    "relativeLocation": "countries",
     "id": "service129",
+    "uniqueProperty": false,
+    "totalRating": 8.7,
+    "houseKeeper": false,
     "name": "Guided Tour",
     "description": "Guided sightseeing tour of the city for up to 10 people.",
     "cityId": "city001",
+    "country": "KZ",
+    "ratings": [],
     "price": 100,
-    "availability": 15,
-    "totalNumber": 15,
+    "totalNumber": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
+    "availability": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
     "createdAt": "2025-01-20T00:00:00Z",
     "updatedAt": "2025-03-08T14:16:32.782Z",
     "category": [
       "Outdoors"
-    ]
+    ],
+    "type": "Glamping Sites"
   },
   {
-    "id": "service130",
-    "name": "Yoga Retreat",
-    "description": "Yoga and wellness retreat for 3 days with expert instructors.",
-    "cityId": "city002",
-    "price": 1200,
-    "availability": 15,
-    "totalNumber": 15,
-    "createdAt": "2025-02-01T00:00:00Z",
-    "updatedAt": "2025-03-08T14:16:31.440Z",
-    "category": [
-      "Outdoors"
-    ]
-  },
-  {
+    "relativeLocation": "domesticcities",
     "id": "service131",
+    "uniqueProperty": true,
+    "totalRating": 8.7,
+    "houseKeeper": false,
     "name": "Wedding Package",
     "description": "Full-service wedding package including venue, catering, and photography.",
     "cityId": "city003",
+    "country": "RU",
+    "ratings": [],
     "price": 5000,
-    "availability": 15,
-    "totalNumber": 15,
+    "totalNumber": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
+    "availability": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
     "createdAt": "2025-01-25T00:00:00Z",
     "updatedAt": "2025-03-06T16:11:38.477Z",
     "category": [
       "Beach"
-    ]
+    ],
+    "type": "Holidays Homes"
   },
   {
+    "relativeLocation": "domesticcities",
     "id": "service132",
+    "uniqueProperty": true,
+    "totalRating": 8.7,
+    "houseKeeper": false,
     "name": "Beach Cabana Rental",
     "description": "Private beach cabana with sunbeds, towels, and refreshments.",
     "cityId": "city003",
+    "country": "RU",
+    "ratings": [],
     "price": 300,
-    "availability": 15,
-    "totalNumber": 15,
+    "totalNumber": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
+    "availability": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
     "createdAt": "2025-02-10T00:00:00Z",
     "updatedAt": "2025-03-06T16:11:40.762Z",
     "category": [
       "Outdoors"
-    ]
-  }
+    ],
+    "type": "Guest Houses"
+  },
+  {
+    "relativeLocation": "domesticcities",
+    "id": "service132",
+    "uniqueProperty": false,
+    "totalRating": 8.7,
+    "houseKeeper": false,
+    "name": "Beach Cabana Rental",
+    "description": "Private beach cabana with sunbeds, towels, and refreshments.",
+    "cityId": "city003",
+    "country": "BY",
+    "ratings": [],
+    "price": 300,
+    "totalNumber": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
+    "availability": [
+      { "for1": 5 },
+      { "for2": 13 },
+      { "for3": 17 },
+      { "for4": 23 },
+      { "for5": 17 }
+    ],
+    "createdAt": "2025-02-10T00:00:00Z",
+    "updatedAt": "2025-03-06T16:11:40.762Z",
+    "category": [
+      "Outdoors"
+    ],
+    "type": "Guest Houses"
+  },
+  {
+  "relativeLocation": "domesticcities",
+  "id": "service130",
+  "uniqueProperty": true,
+  "totalRating": 8.7,
+  "houseKeeper": false,
+  "name": "Yoga Retreat",
+  "description": "Yoga and wellness retreat for 3 days with expert instructors.",
+  "cityId": "city002",
+  "country": "BY",
+  "ratings": [],
+  "price": 1200,
+  "totalNumber": [
+    { "for1": 5 },
+    { "for2": 13 },
+    { "for3": 17 },
+    { "for4": 23 },
+    { "for5": 17 }
+  ],
+  "availability": [
+    { "for1": 5 },
+    { "for2": 13 },
+    { "for3": 17 },
+    { "for4": 23 },
+    { "for5": 17 }
+  ],
+  "createdAt": "2025-02-01T00:00:00Z",
+  "updatedAt": "2025-03-08T14:16:31.440Z",
+  "category": [
+    "Outdoors"
+  ],
+  "type": "Serviced Apartments"
+}
 ]

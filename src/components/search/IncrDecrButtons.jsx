@@ -1,9 +1,10 @@
+/*
 import { Button, InputNumber, Space } from "antd";
 import { MinusOutlined, PlusOutlined } from "@ant-design/icons";
 import { Typography } from "antd";
 const { Title } = Typography;
 
-
+//Second part
 export default function IncrDecrButtons({ value, setValue, title }) {
 
     const increment = (e) => {
@@ -39,4 +40,4 @@ export default function IncrDecrButtons({ value, setValue, title }) {
     </>
 
 
-}
+}*/

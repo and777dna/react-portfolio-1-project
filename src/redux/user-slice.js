@@ -1,30 +1,40 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchData } from "../utils/https";
-import { setError, setLoading } from "./availability-slice";
+
+/*import type { PayloadAction } from '@reduxjs/toolkit'//TODO: .ts
+interface CounterState {
+    value: number
+}
+const initialState = { value: 0 } satisfies CounterState as CounterState*/
 
 const userSlice = createSlice({
     name: "user",
     initialState: {
-        //user: [],
         user: [],
         error: null,
         loading: false,
-        isAdmin: false
+        isAdmin: false,
+        token: null
     },
     reducers: {
         setIsAdmin: (state, action) => {
             state.isAdmin = action.payload;
         },
+        setToken: (state, action) => {
+            state.token = action.payload;
+        },
         setUserData: (state, action) => {
             //console.log("Setting user data:", action.payload);
-            state.user = action.payload;
+            state.user = action.payload;//TODO: .ts action: PayloadAction<interface??>
             state.loading = false;
         },
         setLoadingData: (state, action) => {
             //console.log("Setting user data:", action.payload);
             state.loading = action.payload;
         },
-        clearUserData: (state, action) => {},
+        clearUserData: (state) => {
+            state.user = [];
+        },
         updateUserData: (state, action) => {},
         showUserData: (state, action) => {},
         hideUserData: (state, action) => {},
@@ -53,5 +63,5 @@ export const fetchUsersData = (state, action) => {
 }
 
 
-export const { setUserData, clearUserData, hideUserData, showUserData, updateUserData, setErrorData, setLoadingData, setIsAdmin } = userSlice.actions;
+export const { setUserData, clearUserData, hideUserData, showUserData, updateUserData, setErrorData, setLoadingData, setIsAdmin, setToken } = userSlice.actions;
 export default userSlice;

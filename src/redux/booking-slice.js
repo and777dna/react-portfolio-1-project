@@ -6,6 +6,7 @@ const bookingSlice = createSlice({
     name: "booking",
     initialState: {
         rooms: [],
+        sortedRoomsAccordingToParams: [],
         currentRoomNumbersBooked: [],
         previousRoomNumbersBooked: [],
         loading: false,
@@ -40,6 +41,9 @@ const bookingSlice = createSlice({
             state.currentRoomNumbersBooked = state.currentRoomNumbersBooked.filter(
                 (reservation) => reservation.id !== action.payload.id
             )
+        },
+        sortAccordingToParams: (state, action) => {
+
         },
         /*bookRoom: (state, action) => {
             const roomIndex = state.rooms.findIndex(room => room.id === action.payload.id);
@@ -81,6 +85,7 @@ export const fetchBookings = () => {
 }
 
 
+
 // Универсальная функция для бронирования и отмены бронирования
 export const updateRoomAvailability = (bookingID, actionType) => {
     return async (dispatch) => {
@@ -115,5 +120,5 @@ export const updateRoomAvailability = (bookingID, actionType) => {
 
 
 
-export const { showHistory, moveToHistory, setLoading, setError, setRoomsData, adddReservation, deleteReservationFromBookedNumbers} = bookingSlice.actions;
+export const { showHistory, moveToHistory, setLoading, setError, setRoomsData, adddReservation, deleteReservationFromBookedNumbers, sortAccordingToParams} = bookingSlice.actions;
 export default bookingSlice;
