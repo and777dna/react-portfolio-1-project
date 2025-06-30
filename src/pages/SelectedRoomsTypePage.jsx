@@ -8,6 +8,7 @@ import { sortAccordingToParams } from "../redux/booking-slice";
 import Filter from "../components/filter/Filter";
 import useFilter from "../components/filter/useFilter";
 import useUpdateFilteredRoom from "./useUpdateFilteredRoom";
+import Breadcrumbs from "./selectedRoomTypePage/Breadcrumbs";
 
 const style = {
     display: 'flex',

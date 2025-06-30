@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Tabs } from "antd";
 import Modal from "../../UI/Modal";
 import React, { useState } from "react";
+import Breadcrumbs from "./Breadcrumbs";
 
 function goToSection(key) {
     const section = document.getElementById(key);
@@ -69,6 +70,7 @@ export default function SelectedRoomPage() {
 
 
     return <>
+        <Breadcrumbs hotel={roomFindedByID}/>
         <Tabs
             defaultActiveKey="1"
             //items={items}
